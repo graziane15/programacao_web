@@ -9,6 +9,12 @@
 </head>
 
 <body>
+    <?php
+    $pesquisa = $_POST['busca'] ?? '';//armazenar as pesquisas feitas,se tiver em braco ele vai listar todo mundo
+    include "conexao.php";//inclui todo os dados de conexao.php
+    $sql = "SELECT * FROM usuario where nome LIKE '%$pesquisa%' ";//selecione tudo da tabela usuario onde a coluna nome vai ter um restricao
+    $dados = mysqli_query($conexao, $sql);//vai validar se esta ocorendo tudo ok
+    ?>
 
     <div class="container">
         <div class="row">
