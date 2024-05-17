@@ -1,17 +1,18 @@
-<?php 
-    include ("conexao.php");
+<?php
+include ("conexao.php");
+$nome=$_POST['nome'];
+$email=$_POST['email'];
+$senha= password_hash ($_POST['senha'],PASSWORD_DEFAULT);
 
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
 
-    $consulta = " INSERT INTO usuario(nome,email,senha)
-    VALUES('$nome','$email','$senha')";
-
-    if($conexao = mysqli_query($conexao,$consulta)){
-        echo "cadastrado com sucesso";
-    }else{
-        echo "usuario nao encontrado";
+    $sql= "INSERT INTO ifusuario(nome, email, senha)
+    VALUES('$nome', '$email', '$senha')";
+    if($conexao=mysqli_query($conexao, $sql)){
+       // echo"cadastro realizado com sucesso";
     }
+    else{
+        echo"erro ao cadastra-se";
+    }
+
 
 ?>

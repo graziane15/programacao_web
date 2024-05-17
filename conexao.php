@@ -1,16 +1,12 @@
-<?php 
-
-$servidor ="localhost";
-$usuario ="root";
-$senha ="";
-$banco ="cad";
-
-if($conexao = mysqli_connect($servidor,$usuario,$senha,$banco)){
-
-   // echo"deu certo";
-}else
-{
-    //echo"deu errado";
+<?php
+$host='localhost';
+$user='root';
+$senha='';
+$bd='grazi2c';
+if ($conexao = mysqli_connect($host, $user, $senha, $bd)){
+//echo "conectado com sucesso";
 }
+else
+    echo "falhou";
 
 ?>
