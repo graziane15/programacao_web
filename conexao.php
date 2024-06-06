@@ -1,12 +1,14 @@
-<?php
-$host='localhost';
-$user='root';
-$senha='';
-$bd='grazi2c';
-if ($conexao = mysqli_connect($host, $user, $senha, $bd)){
-//echo "conectado com sucesso";
-}
-else
-    echo "falhou";
+<?php 
+$host = "localhost";
+$user ="root";
+$senha ="";
+$banco = "provainfor";
 
+$conexao = new mysqli($host,$user,$senha,$banco);
+    if (!$conexao){
+    //echo 'deu errado'.mysqli_connect_error();
+} 
+else{
+    //echo 'deu certo ';
+}
 ?>
